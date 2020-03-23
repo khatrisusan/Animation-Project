@@ -1,2 +1,4 @@
 tree.gif/
 tree.png/
+.cache/
+node_modules
