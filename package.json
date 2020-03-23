@@ -1,0 +1,19 @@
+{
+  "name": "animation-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "animation_project.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khatrisusan/Animation-Project.git"
+  },
+  "author": "susanAndJugal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khatrisusan/Animation-Project/issues"
+  },
+  "homepage": "https://github.com/khatrisusan/Animation-Project#readme"
+}
