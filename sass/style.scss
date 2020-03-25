@@ -1,0 +1,15 @@
+@use 'partials/vars';
+@use 'partials/headers';
+@use 'partials/mixins';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: vars.$bg-color;
+}
+h1 {
+  @include mixins.flexible();
+}

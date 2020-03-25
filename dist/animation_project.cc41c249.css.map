@@ -1,1 +1,0 @@
-{"version":3,"sources":["animation_project.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"animation_project.cc41c249.css","sourceRoot":"..","sourcesContent":["* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\nbody {\r\n  background-color: hotpink;\r\n}\r\n"]}
