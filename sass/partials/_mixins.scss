@@ -8,3 +8,9 @@
   border: $width solid #000;
   border-radius: 20px;
 }
+@mixin bodyFont() {
+  font-family: "Poppins", sans-serif;
+}
+@mixin headerFont() {
+  font-family: "Montserrat", sans-serif;
+}

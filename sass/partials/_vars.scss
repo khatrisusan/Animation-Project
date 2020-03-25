@@ -1,1 +1,31 @@
-$bg-color: hotpink;
+@use 'partials/mixins';
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Poppins&display=swap");
+$body-bg-color: #000839;
+$header-bg-color: #005082;
+$font-color: #0a0a0a;
+$paragraph-bg-color: #ffa41b;
+//font-family: 'Poppins', sans-serif;
+//font-family: 'Montserrat', sans-serif;
+
+/* 
+USING FONT
+
+*/
+
+h1 {
+  @include mixins.flexible();
+  @include mixins.headerFont();
+}
+h3 {
+  @include mixins.headerFont();
+}
+p {
+  @include mixins.bodyFont();
+}
+footer {
+  @include mixins.flexible();
+}
+.icon img {
+  width: 50px;
+  height: auto;
+}

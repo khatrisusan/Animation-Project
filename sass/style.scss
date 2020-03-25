@@ -1,15 +1,40 @@
 @use 'partials/vars';
-@use 'partials/headers';
 @use 'partials/mixins';
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  background-color: vars.$bg-color;
+  background-color: vars.$body-bg-color;
+  overflow: hidden;
 }
+
+.hide {
+  display: none;
+}
+.icon {
+  width: 50px;
+  height: auto;
+}
+#treeSVG {
+  left: 0;
+  top: 0;
+  width: 2400px;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+//general styling
 h1 {
-  @include mixins.flexible();
+  color: vars.$font-color;
+  background-color: vars.$header-bg-color;
+}
+h3 {
+  color: vars.$font-color;
+  background-color: vars.$header-bg-color;
+}
+p {
+  color: vars.$font-color;
+  background-color: vars.$paragraph-bg-color;
 }
