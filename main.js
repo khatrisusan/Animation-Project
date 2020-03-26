@@ -13,6 +13,35 @@ async function fetchTimeline() {
 }
 function prepareData(data) {
   console.log(data);
+  //forEach
+  data.forEach(showSingle);
+}
+function showSingle(single) {
+  console.log(single);
+  //cloning template and append to container
+  const templateDesc = document.querySelector("template.desc").content;
+  const templateBox = document.querySelector("template.box").content;
+  const templateIcon = document.querySelector("template.icon").content;
+  //pass true
+  const copyDesc = templateDesc.cloneNode("true");
+  const copyBox = templateBox.cloneNode("true");
+  const copyIcon = templateIcon.cloneNode("true");
+  //change textContent
+  copyDesc.querySelector("h3").innerText = `${single.Date} - ${single.Event}`;
+  copyDesc.querySelector(".p1").innerText = `${single.paragraph1}`;
+
+  //Its a bug....it should check if have paragraph2 and if have have to create p and append
+  let p2 = document.createElement("p");
+  let br = document.createElement("br");
+  p2.setAttribute("class", "p2");
+  copyDesc.querySelector(".p1").appendChild(br);
+  copyDesc.querySelector(".p1").appendChild(p2);
+  copyDesc.querySelector(".p2").innerText = `${single.paragraph2}`;
+
+  //
+
+  //append
+  document.querySelector(".descContainer").appendChild(copyDesc);
 }
 async function fetchSVG() {
   let response = await fetch("tree.svg");
