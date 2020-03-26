@@ -1,4 +1,7 @@
 "use strict";
+
+// import { svg } from "./modules/svg";
+
 let svgPath = document.querySelector("#treeSVG");
 window.addEventListener("DOMContentLoaded", init);
 function init() {
