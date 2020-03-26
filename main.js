@@ -12,42 +12,7 @@ async function fetchTimeline() {
   const jsonData = await response.json();
   prepareData(jsonData);
 }
-function prepareData(data, myImage) {
-  console.log(data);
-<<<<<<< HEAD
-  //forEach
-  data.forEach(showSingle);
-}
-function showSingle(single) {
-  console.log(single);
-  //cloning template and append to container
-  const templateDesc = document.querySelector("template.desc").content;
-  const templateBox = document.querySelector("template.box").content;
-  const templateIcon = document.querySelector("template.icon").content;
-  //pass true
-  const copyDesc = templateDesc.cloneNode("true");
-  const copyBox = templateBox.cloneNode("true");
-  const copyIcon = templateIcon.cloneNode("true");
-  //change textContent
-  copyDesc.querySelector("h3").innerText = `${single.Date} - ${single.Event}`;
-  copyDesc.querySelector(".p1").innerText = `${single.paragraph1}`;
 
-  //Its a bug....it should check if have paragraph2 and if have have to create p and append
-  let p2 = document.createElement("p");
-  let br = document.createElement("br");
-  p2.setAttribute("class", "p2");
-  copyDesc.querySelector(".p1").appendChild(br);
-  copyDesc.querySelector(".p1").appendChild(p2);
-  copyDesc.querySelector(".p2").innerText = `${single.paragraph2}`;
-
-  //
-
-  //append
-  document.querySelector(".descContainer").appendChild(copyDesc);
-=======
-  console.log(myImage);
->>>>>>> d6ecbf042989ba0acf34be5e3d057431cc4f7c55
-}
 async function fetchSVG() {
   let response = await fetch("tree.svg");
   let mySvgData = await response.text();
@@ -57,5 +22,58 @@ async function fetchSVG() {
 async function fetchImage() {
   let response = await fetch("image.json");
   let myImage = await response.json();
-  prepareData(myImage);
+  prepareImg(myImage);
 }
+function prepareData(data) {
+  console.log(data);
+  //forEach
+  data.forEach(showSingle);
+}
+function prepareImg(image) {
+  console.log(image);
+  //forEach
+  image.forEach(singleImg);
+}
+function showSingle(singleDesc) {
+  console.log(singleDesc);
+
+  //cloning template and append to container
+  const templateDesc = document.querySelector("template.desc").content;
+
+  //pass true
+  const copyDesc = templateDesc.cloneNode("true");
+
+  //change textContent
+  copyDesc.querySelector(
+    "h3"
+  ).innerText = `${singleDesc.Date} - ${singleDesc.Event}`;
+  copyDesc.querySelector(".p1").innerText = `${singleDesc.paragraph1}`;
+
+  //Its a bug....it should check if have paragraph2 and if have have to create p and append
+  let p2 = document.createElement("p");
+  let br = document.createElement("br");
+  p2.setAttribute("class", "p2");
+  copyDesc.querySelector(".p1").appendChild(br);
+  copyDesc.querySelector(".p1").appendChild(p2);
+  copyDesc.querySelector(".p2").innerText = `${singleDesc.paragraph2}`;
+
+  //
+
+  //append
+  document.querySelector(".descContainer").appendChild(copyDesc);
+}
+function singleImg(myImg) {
+  console.log(myImg);
+  const templateIcon = document.querySelector("template.icon").content;
+  const copyIcon = templateIcon.cloneNode("true");
+  //change src
+  const icon = copyIcon.querySelector("img");
+  icon.setAttribute("src", `${myImg.link}`);
+  icon.setAttribute("alt", `${myImg.name}-img`);
+  icon.setAttribute("class", "icon");
+  //append
+  document.querySelector(".iconContainer").appendChild(copyIcon);
+}
+/* For CLick eventListener we will clone template.box with down content which is optional structure */
+//const templateBox = document.querySelector("template.box").content;
+//const copyBox = templateBox.cloneNode("true");
