@@ -1,6 +1,6 @@
 "use strict";
 
-// import { svg } from "./modules/svg";
+import { manipulatingSvg } from "./modules/svg";
 
 let svgPath = document.querySelector("#treeSVG");
 window.addEventListener("DOMContentLoaded", init);
@@ -47,9 +47,7 @@ function showSingle(singleDesc) {
   const copyDesc = templateDesc.cloneNode("true");
 
   //change textContent
-  copyDesc.querySelector(
-    "h3"
-  ).innerText = `${singleDesc.Date} - ${singleDesc.Event}`;
+  copyDesc.querySelector("h3").innerText = `${singleDesc.Date} - ${singleDesc.Event}`;
   copyDesc.querySelector(".p1").innerText = `${singleDesc.paragraph1}`;
 
   //if paragraph2 exists make paragraph2 and append
