@@ -5,14 +5,16 @@ function init() {
   console.log("ready");
   fetchTimeline();
   fetchSVG();
+  fetchImage();
 }
 async function fetchTimeline() {
   const response = await fetch("timeline.json");
   const jsonData = await response.json();
   prepareData(jsonData);
 }
-function prepareData(data) {
+function prepareData(data, myImage) {
   console.log(data);
+<<<<<<< HEAD
   //forEach
   data.forEach(showSingle);
 }
@@ -42,10 +44,18 @@ function showSingle(single) {
 
   //append
   document.querySelector(".descContainer").appendChild(copyDesc);
+=======
+  console.log(myImage);
+>>>>>>> d6ecbf042989ba0acf34be5e3d057431cc4f7c55
 }
 async function fetchSVG() {
   let response = await fetch("tree.svg");
   let mySvgData = await response.text();
   document.querySelector("#treeSVG").innerHTML = mySvgData;
   //startManipulatingSvg();
+}
+async function fetchImage() {
+  let response = await fetch("image.json");
+  let myImage = await response.json();
+  prepareData(myImage);
 }
