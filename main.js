@@ -49,14 +49,15 @@ function showSingle(singleDesc) {
   ).innerText = `${singleDesc.Date} - ${singleDesc.Event}`;
   copyDesc.querySelector(".p1").innerText = `${singleDesc.paragraph1}`;
 
-  //Its a bug....it should check if have paragraph2 and if have have to create p and append
-  let p2 = document.createElement("p");
-  let br = document.createElement("br");
-  p2.setAttribute("class", "p2");
-  copyDesc.querySelector(".p1").appendChild(br);
-  copyDesc.querySelector(".p1").appendChild(p2);
-  copyDesc.querySelector(".p2").innerText = `${singleDesc.paragraph2}`;
-
+  //if paragraph2 exists make paragraph2 and append
+  if (singleDesc.paragraph2) {
+    let p2 = document.createElement("p");
+    let br = document.createElement("br");
+    p2.setAttribute("class", "p2");
+    copyDesc.querySelector(".p1").appendChild(br);
+    copyDesc.querySelector(".p1").appendChild(p2);
+    copyDesc.querySelector(".p2").innerText = `${singleDesc.paragraph2}`;
+  }
   //
 
   //append
