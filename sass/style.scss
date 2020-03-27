@@ -7,7 +7,6 @@
 }
 body {
   background-color: vars.$body-bg-color;
-  overflow: hidden;
 }
 
 .hide {
@@ -37,4 +36,9 @@ h3 {
 p {
   color: vars.$font-color;
   background-color: vars.$paragraph-bg-color;
+}
+#treeSVG {
+  display: block;
+  height: 500px;
+  margin: 0 auto;
 }
