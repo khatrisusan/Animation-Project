@@ -18,12 +18,16 @@ h1 {
 }
 h3 {
   @include mixins.headerFont();
+  @include mixins.flexible();
 }
 p {
   @include mixins.bodyFont();
 }
 footer {
   @include mixins.flexible();
+}
+svg {
+  align-content: center;
 }
 .icon img {
   width: 50px;
