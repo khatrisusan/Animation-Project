@@ -23,6 +23,7 @@
 // }
 
 // svg();
+
 const svg = document.querySelector("#treeSVG");
 
 let position = 0;
