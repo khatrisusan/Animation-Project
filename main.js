@@ -6,6 +6,7 @@ import { clickEventFunc } from "./modules/description";
 import { gsap } from "gsap";
 
 import { eventFunc } from "./modules/event";
+import { cloneDesc } from "./sass/modules/detail";
 
 let svgPath = document.querySelector("#treeSVG");
 window.addEventListener("DOMContentLoaded", init);
@@ -19,6 +20,7 @@ async function fetchTimeline() {
   const response = await fetch("timeline.json");
   const jsonData = await response.json();
   prepareData(jsonData);
+  cloneDesc(jsonData);
 }
 
 async function fetchSVG() {

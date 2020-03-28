@@ -1,11 +1,3 @@
-// const tree = document.querySelector("#treeSVG");
-
-// export function fetchDesc() {
-//   //console.log(tree);
-//   document.querySelector("h1").innerText = "Hello There!";
-//   tree.style.width = "20ox";
-// }
-// fetchDesc();
 import { gsap } from "gsap";
 export function clickEventFunc(mySvgData) {
   const mySvg = document.querySelector("#treeSVG");
