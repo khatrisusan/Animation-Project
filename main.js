@@ -24,7 +24,7 @@ async function fetchTimeline() {
 }
 
 async function fetchSVG() {
-  const response = await fetch("tree.svg");
+  const response = await fetch("tree5-01.svg");
   const mySvgData = await response.text();
   document.querySelector("#treeSVG").innerHTML = mySvgData;
   //startManipulatingSvg();

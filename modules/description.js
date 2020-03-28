@@ -1,13 +1,13 @@
 import { gsap } from "gsap";
 export function clickEventFunc(mySvgData) {
   const mySvg = document.querySelector("#treeSVG");
-  const stem = document.querySelector(".st3");
+  const stem = document.querySelector("#stem");
   const leaf1 = document.querySelector("#l1");
   const leaf2 = document.querySelector("#r1");
   const leaf3 = document.querySelector("#l2");
-  const leaf4 = document.querySelector(".st5");
+  const leaf4 = document.querySelector(".cls-3");
   leaf4.setAttribute("id", "r2");
-  const leaf5 = document.querySelector(".st7");
+  const leaf5 = document.querySelector(".cls-5");
   leaf5.setAttribute("id", "top-leaf");
   let leafArray = [leaf1, leaf2, leaf3, leaf4, leaf5];
   for (let i = 0; i < leafArray.length; i++) {
@@ -15,11 +15,11 @@ export function clickEventFunc(mySvgData) {
     leafArray[i].style.fill = "green";
     stem.style.display = "none";
     leafArray[i].style.display = "none";
-    document.querySelector("#Layer_1").style.fill = "transparent";
-    document.querySelectorAll("polygon").forEach(element => {
-      element.style.fill = "transparent";
-      //console.log(element);
-    });
+    //document.querySelector("#Layer_1").style.fill = "transparent";
+    // document.querySelectorAll("polygon").forEach(element => {
+    //   element.style.fill = "transparent";
+    //console.log(element);
+    // });
     document.querySelectorAll(".st6").forEach(element => {
       element.style.stroke = "transparent";
       //console.log(element);
@@ -34,6 +34,7 @@ export function clickEventFunc(mySvgData) {
     leaf3.style.fill = "green";
     gsap.to(leaf4, { display: "block" }, 2.5);
     gsap.to(leaf5, { display: "block" }, 3.0);
+
     leafArray[i].addEventListener("click", clickCallBack);
   }
   function clickCallBack(jsonData) {
