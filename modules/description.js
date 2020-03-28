@@ -6,6 +6,15 @@ export function clickEventFunc(mySvgData) {
   const leaf2 = document.querySelector("#r1");
   const leaf3 = document.querySelector("#l2");
   const leaf4 = document.querySelector(".cls-3");
+
+  let text1 = document.querySelector("#t1");
+  let text2 = document.querySelector("#t2");
+  let text3 = document.querySelector("#t3");
+  let text4 = document.querySelector("#t4");
+  let text5 = document.querySelector("#t5");
+
+  let myText = [text1, text2, text3, text4, text5];
+
   leaf4.setAttribute("id", "r2");
   const leaf5 = document.querySelector(".cls-5");
   leaf5.setAttribute("id", "top-leaf");
@@ -15,6 +24,10 @@ export function clickEventFunc(mySvgData) {
     leafArray[i].style.fill = "green";
     stem.style.display = "none";
     leafArray[i].style.display = "none";
+    myText[i].style.display = "none";
+    document.querySelector("#top_leaf > path.cls-4").style.display = "none";
+    document.querySelector("#r2 > path.cls-4").style.display = "none";
+
     //document.querySelector("#Layer_1").style.fill = "transparent";
     // document.querySelectorAll("polygon").forEach(element => {
     //   element.style.fill = "transparent";
@@ -28,12 +41,20 @@ export function clickEventFunc(mySvgData) {
     gsap.to("#treeSVG", { scale: 5 }, 0);
     gsap.to(stem, { display: "block" }, 0.5);
     gsap.to(leaf1, { display: "block" }, 1);
+
+    gsap.to(text1, { display: "block" }, 1);
+
     leaf1.style.fill = "green";
+
     gsap.to(leaf2, { display: "block" }, 1.5);
+    gsap.to(text2, { display: "block" }, 1.5);
     gsap.to(leaf3, { display: "block" }, 2.0);
+    gsap.to(text3, { display: "block" }, 2.0);
     leaf3.style.fill = "green";
     gsap.to(leaf4, { display: "block" }, 2.5);
+    gsap.to(text4, { display: "block" }, 2.5);
     gsap.to(leaf5, { display: "block" }, 3.0);
+    gsap.to(text5, { display: "block" }, 3.0);
 
     leafArray[i].addEventListener("click", clickCallBack);
   }
