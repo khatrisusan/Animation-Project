@@ -6,7 +6,7 @@ import { clickEventFunc } from "./modules/description";
 import { gsap } from "gsap";
 
 import { eventFunc } from "./modules/event";
-import { cloneDesc } from "./sass/modules/detail";
+import { cloneDesc } from "./modules/detail";
 
 let svgPath = document.querySelector("#treeSVG");
 window.addEventListener("DOMContentLoaded", init);

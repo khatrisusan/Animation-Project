@@ -18,6 +18,7 @@ function data(detail) {
   document.querySelectorAll(".shortDesc").forEach(function(item, i) {
     item.setAttribute("id", detail.Date);
   });
+  let myList = document.querySelectorAll(".shortDesc");
 }
 var array = [1, 2, 3, 4, 5];
 var allDiv = document.querySelectorAll("div");
