@@ -31,9 +31,10 @@ async function fetchImage() {
   prepareImg(myImage);
 }
 function prepareData(data) {
-  //console.log(data);
+  console.log(data);
   //forEach
   data.forEach(showSingle);
+  clickCallBack(data);
 }
 function prepareImg(image) {
   //console.log(image);
@@ -123,5 +124,17 @@ function clickEventFunc() {
   function clickCallBack(evt) {
     //here we will fetch template
     console.log(this.id || "noID");
+    if (this.id === "l1") {
+      console.log("Should fetch 1996's data");
+      console.log(jsonData);
+    } else if (this.id === "r1") {
+      console.log("Should fetch 1998's data");
+    } else if (this.id === "l2") {
+      console.log("Should fetch 2001's data");
+    } else if (this.id === "r2") {
+      console.log("Should fetch 2007's data");
+    } else {
+      console.log("Should fetch 2010's data");
+    }
   }
 }
