@@ -27,6 +27,7 @@ export function clickEventFunc(mySvgData) {
     myText[i].style.display = "none";
     document.querySelector("#top_leaf > path.cls-4").style.display = "none";
     document.querySelector("#r2 > path.cls-4").style.display = "none";
+    document.querySelector("#leaf_branch > text:nth-child(12)").style.display = "none";
 
     //document.querySelector("#Layer_1").style.fill = "transparent";
     // document.querySelectorAll("polygon").forEach(element => {
