@@ -1,6 +1,7 @@
 "use strict";
 import "@babel/polyfill";
 import { clickEventFunc } from "./modules/description";
+import { cloneDesc } from "./modules/detail";
 
 //import { manipulatingSvg } from "./modules/svg";
 import { gsap } from "gsap";
@@ -19,6 +20,7 @@ async function fetchTimeline() {
   const response = await fetch("timeline.json");
   const jsonData = await response.json();
   prepareData(jsonData);
+  cloneDesc(jsonData);
 }
 
 async function fetchSVG() {
